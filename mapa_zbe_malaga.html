@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>El mapa sonoro de los pájaros en Málaga</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <!-- Script y estilos de MapLibre-->
+    <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <!-- Estilos básicos de la página-->
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; } 
+        
+         /* Titulito de los tooltips */
+         h3 {
+            line-height: 1.2em;
+            font-size: 1.4em;
+            margin: 0px 0px 4px 0px;
+        }
+        /* Texto normal de los tooltips */
+        p {
+            line-height: 1.4em;
+            margin: 2px 0px 0px 0px;
+        }
+        /* Texto normal de la leyenda */
+        div p {
+            color: black;
+            font-size: 14px;
+        }
+
+        .map-overlay {
+            position: absolute;
+            /* Ubicación: si quieres arriba, a la izquierda, tendrás que cambiar bottom por top y right por left */
+            top: 0;
+            left: 0;
+            /* Color de fondo de la leyenda */
+            background: rgba(255, 255, 255, 0.8);
+            /* Espacio reservado con respecto al límite de pantalla */
+            margin-right: 20px;
+            /* Fuente tipográfica */
+            font-family: Arial, sans-serif;
+            overflow: auto;
+            /* Borde de la caja de la leyenda */
+            border-radius: 0px;
+        }
+        /* Estilos propios del contenido de la leyenda */
+        #legend {
+            padding: 10px;
+            line-height: 18px;
+            height: 38px;
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 148px;
+            overflow: hidden;
+            background-color: #ffffff;
+            color: #202020;
+            font-size: 13px;
+            border-radius: 4px;
+            visibility: hidden;
+        }
+        /* Referencias (puntitos, cuadritos de colores) de la leyenda */
+        .legend-key {
+            display: inline-block;
+            border-radius: 0%;
+            margin-bottom: 3px;
+            width: 20px;
+            height: 4px;
+            margin-right: 10px;
+            opacity: 1;
+        }
+        .maplibregl-popup-content {
+    width: 300px;
+}
+
+
+    </style>
+
+</head>
+<body>
+    <!-- Carga del geocoder de MapLibre -->
+    <script src="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/@maplibre/maplibre-gl-geocoder@1.5.0/dist/maplibre-gl-geocoder.css"
+    />
+
+    <!-- Contenedor del mapa-->
+    <div id='map'></div>
+    <div class='map-overlay' id='legend'></div>
+
+    <!-- Java Script de MapLibre-->
+    <script>
+        const map = new maplibregl.Map({
+          style: 'https://raw.githubusercontent.com/encarnihinojosa/mapstyles/refs/heads/main/positron_light.json',
+          center: [-4.422, 36.722],
+          zoom: 9,
+          container: 'map',
+        });
+    
+map.on('load', () => {
+
+
+map.addSource('puntos', {
+// es de tipo geojson
+'type': 'geojson',
+// url del recurso (url desde Github)
+'data': 'https://raw.githubusercontent.com/encarnihinojosa/mapasSUR/refs/heads/main/pajaritos_malaga.json'
+});
+
+map.addLayer({
+    'id': 'puntos_layer',
+    'type': 'circle',
+    'source': 'puntos',
+    'paint': {
+        'circle-radius': 4,
+        'circle-color': '#97001A50',
+        'circle-stroke-color': '#ffffff',
+        'circle-stroke-width': 8,
+        'circle-stroke-opacity': 0
+    }
+});
+
+});
+
+
+
+
+let popup; // Variable para almacenar la referencia al popup
+
+map.on('mousemove', 'puntos_layer', (e) => {
+    // Crea un nuevo popup si no existe
+    if (!popup) {
+        popup = new maplibregl.Popup({ 
+            offset: [0, -20],
+            closeButton: false,
+            closeOnClick: false
+        });
+    }
+    
+    // Configura y muestra el popup
+    /*
+    popup
+        .setLngLat(e.lngLat)
+        .setHTML(
+            `<div><p><b>${e.features[0].properties.name}</b></p>
+            <p>${e.features[0].properties.lugar}</p></div>
+            <img src="https://proyectos.diariosur.es/iframes/Mapas/pajaros/curruca_cebecinegra.jpg" alt="curruca" width="100" height="100">
+            <br><audio preload autoplay controls src="${e.features[0].properties.urlok}" type="audio/mpeg">
+</audio>`
+        )
+        .addTo(map);
+        map.getCanvas().style.cursor = 'pointer';
+*/
+
+const audioUrl = e.features[0].properties.urlok;
+
+// Detección de extensión (por ejemplo .mp3 o .wav)
+let audioType = 'audio/mpeg'; // valor por defecto
+if (audioUrl && audioUrl.endsWith('.wav')) {
+  audioType = 'audio/wav';
+}
+
+popup
+  .setLngLat(e.lngLat)
+  .setHTML(`
+    <div style="display: flex; align-items: flex-start; gap: 10px; max-width: 300px;">
+      <!-- Columna izquierda: texto -->
+      <div style="flex: 1;">
+        <p style="margin: 0;"><b>${e.features[0].properties.name}</b></p>
+        <p style="margin: 2px 0 0 0;">${e.features[0].properties.lugar}</p>
+      </div>
+      
+      <!-- Columna derecha: imagen -->
+      <div style="flex: 0 0 100px; text-align: right;">
+        <img src="${e.features[0].properties.img}"
+             alt="${e.features[0].properties.name}"
+             width="80"
+             height="80"
+             style="border-radius: 6px; object-fit: cover;">
+      </div>
+    </div>
+    <audio preload autoplay controls
+           src="${audioUrl}"
+           type="${audioType}"
+           style="width: 100%; margin-top: 8px;">
+      Tu navegador no soporta el formato de audio.
+    </audio>
+  `)
+  .addTo(map);
+
+map.getCanvas().style.cursor = 'pointer';
+});
+
+
+
+// Cambiar el cursor a normal y eliminar el popup cuando el mouse sale del polígono
+map.on('mouseleave', 'puntos_layer', () => {
+    map.getCanvas().style.cursor = '';
+    if (popup) {
+        popup.remove(); // Elimina el popup del mapa
+        popup = null;   // Restablece la referencia
+    }
+});
+
+/*
+// LEYENDA
+var layers = ['Riesgo <b>alto</b>','Riesgo <b>medio-alto</b>'];
+    var colors = ['#202020', '#97001A'];
+    for (i = 0; i < layers.length; i++) {
+  var layer = layers[i];
+  var color = colors[i];
+  var item = document.createElement('div');
+  var key = document.createElement('span');
+  key.className = 'legend-key';
+  key.style.backgroundColor = color;
+  key.style.opacity = 1;
+
+  var value = document.createElement('span');
+  value.innerHTML = layer;
+  item.appendChild(key);
+  item.appendChild(value);
+  legend.appendChild(item);
+}
+*/
+
+
+        
+
+        const geocoderApi = {
+        forwardGeocode: async (config) => {
+            const features = [];
+            try {
+                const bbox = [-5.26, 36.23, -3.75, 37.27];
+                const request =
+            `https://nominatim.openstreetmap.org/search?q=${
+                config.query
+            }&format=geojson&polygon_geojson=1&addressdetails=1&viewbox=${
+                    bbox[0]
+                },${bbox[1]},${bbox[2]},${bbox[3]}&bounded=1`;
+                const response = await fetch(request);
+                const geojson = await response.json();
+                for (const feature of geojson.features) {
+                    const center = [
+                        feature.bbox[0] +
+                    (feature.bbox[2] - feature.bbox[0]) / 2,
+                        feature.bbox[1] +
+                    (feature.bbox[3] - feature.bbox[1]) / 2
+                    ];
+                    const point = {
+                        type: 'Feature',
+                        geometry: {
+                            type: 'Point',
+                            coordinates: center
+                        },
+                        place_name: feature.properties.display_name,
+                        properties: feature.properties,
+                        text: feature.properties.display_name,
+                        place_type: ['place'],
+                        center
+                    };
+                    features.push(point);
+                }
+            } catch (e) {
+                console.error(`Failed to forwardGeocode with error: ${e}`);
+            }
+
+            return {
+                features
+            };
+        }
+    };
+
+
+    map.addControl(
+        new MaplibreGeocoder(geocoderApi, {
+            maplibregl, placeholder: 'Busca una calle'
+        }), 'top-left'
+    );
+
+    
+    </script>
+</body>
+</html>
