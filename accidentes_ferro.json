@@ -1,0 +1,22 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-6.322176,42.595493,0]},"properties":{"name":"Torre del Bierzo","pro":"León","com":"Castilla y León","fallecidos":100,"fecha":"3 de enero de 1944","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-6.0602234,36.8294042,0]},"properties":{"name":"El Cuervo","pro":"Sevilla","com":"Andalucía","fallecidos":77,"fecha":"21 de julio de 1972","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.439643,39.462113,0]},"properties":{"name":"Chirivella","pro":"Valencia","com":"Comunidad Valenciana","fallecidos":27,"fecha":"24 de septiembre de 1980","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-2.4933799,41.1365172,0]},"properties":{"name":"Torralba del Moral (Medinaceli)","pro":"Soria","com":"Castilla y León","fallecidos":17,"fecha":"15 de julio de 1980","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.4610723,42.0312483,0]},"properties":{"name":"Huesca","pro":"Huesca","com":"Aragón","fallecidos":11,"fecha":"9 de noviembre de 1981","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[0.777222222222222,41.5505555555556,0]},"properties":{"name":"Juneda","pro":"Lérida","com":"Cataluña","fallecidos":15,"fecha":"25 de marzo de 1988","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-6.0040871,43.3887519,0]},"properties":{"name":"Vega de Anzo (Grado)","pro":"Asturias","com":"Asturias","fallecidos":12,"fecha":"2 de agosto de 1993","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.9748478,42.9203929,0]},"properties":{"name":"Uharte-Arakil","pro":"Navarra","com":"Navarra","fallecidos":18,"fecha":"31 de marzo de 1997","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.7213989,37.6092358,0]},"properties":{"name":"Lorca","pro":"Murcia","com":"Murcia","fallecidos":12,"fecha":"3 de enero de 2001","siglo":"XXI"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.6817698,38.9027623,0]},"properties":{"name":"Chinchilla de Montearagón","pro":"Albacete","com":"Castilla-La Mancha","fallecidos":19,"fecha":"3 de junio de 2003","siglo":"XXI"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.383961,39.4584418,0]},"properties":{"name":"Valencia","pro":"Valencia","com":"Comunidad Valenciana","fallecidos":43,"fecha":"3 de julio de 2006","siglo":"XXI"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[1.9563287,41.2669843,0]},"properties":{"name":"Castelldefels","pro":"Barcelona","com":"Cataluña","fallecidos":12,"fecha":"24 de junio de 2010","siglo":"XXI"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-8.5287201,42.859432,0]},"properties":{"name":"A Grandeira de Angrois (Santiago de Compostela)","pro":"La Coruña","com":"Galicia","fallecidos":79,"fecha":"24 de julio de 2013","siglo":"XXI"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-4.5632146,38.0151474,0]},"properties":{"name":"Adamuz","pro":"Córdoba","com":"Andalucía","fallecidos":39,"fecha":"18 de enero de 2026","siglo":"XXI"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[2.1122981,41.3387079,0]},"properties":{"name":"Barcelona","pro":"Barcelona","com":"Cataluña","fallecidos":24,"fecha":"9 de enero de 1961","siglo":"XX"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.1562286,41.7488491,0]},"properties":{"name":"Estaciones de Grisén y Pinseque (Zaragoza)\n","pro":null,"com":null,"fallecidos":null,"fecha":null,"siglo":null}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.3526637,40.6647108,0]},"properties":{"name":"Villafranca del Campo\n","pro":null,"com":null,"fallecidos":null,"fecha":null,"siglo":null}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-2.9427542,43.3938378,0]},"properties":{"name":"Urduliz\n","pro":null,"com":null,"fallecidos":null,"fecha":null,"siglo":null}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[1.9898607,41.4380651,0]},"properties":{"name":"Corbera de Llobregat\n","pro":null,"com":null,"fallecidos":null,"fecha":null,"siglo":null}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-3.3766123,39.0024583,0]},"properties":{"name":"Manzanares","pro":"Ciudad Real","com":"Castilla-La Mancha","fallecidos":13,"fecha":"15 de diciembre de 1978","siglo":"XX"}}
+]}
