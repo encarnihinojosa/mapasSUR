@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[-4.4239332,36.720865],[-4.4238635,36.721353]]},"properties":{"name":"corte","styleUrl":"#line-000000-1200-nodesc","stroke-opacity":1,"stroke":"#000000","stroke-width":1.2}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[-4.419967,36.7197004],[-4.4199054,36.7193714],[-4.4198517,36.7190919]]},"properties":{"name":"corte","styleUrl":"#line-000000-1200-nodesc","stroke-opacity":1,"stroke":"#000000","stroke-width":1.2}}
+]}
