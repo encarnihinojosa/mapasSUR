@@ -1,5 +1,5 @@
 {"type":"FeatureCollection", "features": [
-{"type":"Feature","geometry":{"type":"Point","coordinates":[-4.5063523,36.7158405,0]},"properties":{"promotor":"Lagoom Living","estado":"Proyectos en obras (sin ofertar)","tipo":"Alquiler","viviendas":"468","name":"Universidad"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-4.5063523,36.7158405,0]},"properties":{"promotor":"Lagoom Living","estado":"Proyectos en obras (sin ofertar)","tipo":"Alquiler","viviendas":"377","name":"Universidad"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-4.5064059,36.7178014,0]},"properties":{"promotor":"Ayuntamiento","estado":"Proyectos en obras (sin ofertar)","tipo":"Alquiler","viviendas":"70","name":"Universidad"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-4.427715,36.746947,0]},"properties":{"promotor":"Fundación Salas","estado":"Proyectos sin iniciar en parcelas urbanizadas","tipo":"Alquiler temporal","viviendas":"94/114","name":"Virreina"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-4.44112,36.706028,0]},"properties":{"promotor":"Fundación Salas","estado":"Proyectos sin iniciar en parcelas urbanizadas","tipo":"Alquiler temporal","viviendas":"56/68","name":"San Lucas"}},
