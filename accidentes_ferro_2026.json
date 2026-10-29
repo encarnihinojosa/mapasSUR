@@ -19,5 +19,5 @@
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-2.9427542,43.3938378,0]},"properties":{"name":"Urduliz\n","pro":"Vizcaya","com":"País Vasco","fallecidos":33,"fecha":"9 de agosto de 1970","siglo":"XX"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[1.9898607,41.4380651,0]},"properties":{"name":"Corbera de Llobregat\n","pro":"Barcelona","com":"Cataluña","fallecidos":22,"fecha":"1 de maro de 1977","siglo":"XX"}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-3.3766123,39.0024583,0]},"properties":{"name":"Manzanares","pro":"Ciudad Real","com":"Castilla-La Mancha","fallecidos":13,"fecha":"15 de diciembre de 1978","siglo":"XX"}},
-{"type":"Feature","geometry":{"type":"Point","coordinates":[-3.8157705212660322,39.435521653689484]},"properties":{"name":"Urda","pro":"Toledo","com":"Castilla–La Mancha","fallecidos":69,"fecha":"28 de octubre de 2026","siglo":"XXI"}}
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-3.8157705212660322,39.435521653689484]},"properties":{"name":"Urda","pro":"Toledo","com":"Castilla–La Mancha","fallecidos":74,"fecha":"28 de octubre de 2026","siglo":"XXI"}}
 ]}
